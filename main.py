@@ -42,7 +42,6 @@ def get_birthday():
 
 def get_words():
   words = requests.get("http://api.tianapi.com/tiangou/index?key=7c37ff0a1821b9839c49628d8a4890f8")
-  res = requests.get(url).json()
   words = res['newslist'][0]['content']
   return words
 
