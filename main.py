@@ -42,9 +42,9 @@ def get_birthday():
 
 def get_words():
   words = requests.get("http://api.tianapi.com/tiangou/index?key=7c37ff0a1821b9839c49628d8a4890f8")
-  if words.status_code != 200:
-    return get_words()
-  return words.json()['newslist'][0]
+  res = requests.get(url).json()
+  words = res['newslist'][0]['content']
+  return words
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
